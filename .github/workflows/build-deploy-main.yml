@@ -48,6 +48,7 @@ jobs:
         gulp package-solution --ship 
     - name: Set pkgname
       id: get-pkgname
+      working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       run: |
         echo ::set-output name=pkgname::$(find . -name *.sppkg)
     - name: Use the output
